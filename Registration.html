@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta charset="utf-8">
+	
+	<title>Registration Form</title>
+	
+	<link rel="stylesheet" href="style.css" type="text/css">
+	
+	<script src="Javascript/Registration-login.js" type="text/javascript"></script>
+
+</head>
+<body>
+	
+	<div class="login">
+			<h1>Registration</h1>
+		
+		<form action="registration.php" method="post"  onsubmit="return validation()" autocomplete="off">
+			
+				
+			<div class="textbox">
+			<img src="icons/user.svg">
+			<input type="text" placeholder="Username*" name="username" id="usr" title="It consist of Charater only" required >
+			</div>
+			<span id="usr1"> </span>
+				
+		
+			<div class="textbox">
+			<img src="icons/email.svg">
+			<input type="email" placeholder="Email*" name="emailid" id="email" required pattern="[A-za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email id must be in this format: xyz@xyx.xhx">
+			</div>
+			<span id="email1"> </span>
+		
+				
+			<div class="textbox">
+			<img src="icons/key.svg"  id="pass2">
+			<input type="password" placeholder="Password*" name="pass" id="pass" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters">
+			</div>
+			<span id="pass1"> </span>
+				
+		
+			<div class="textbox">
+			<img src="icons/key.svg">
+			<input type="password" placeholder="Retype Password*" name="pass" id="conpass" required>
+			</div>
+			<span id='conpass1'></span>
+				
+		
+			<div class="textbox">
+			<img src="icons/phone.svg">
+				<div class="country-code" >	
+		
+				<span1><input type="tel" name="country code" maxlength="4" placeholder="+1" pattern="[+]\d{1,}" title="Format must be +1 or +91"></span1>	
+			
+				<span2><input type="tel" placeholder="Mobile No" name="number" maxlength="12" id="num" pattern="\d{3} \d{3} \d{4}" title="Number must be in DIGIT and Format: 123 123 1234"></span2>
+			
+				</div>
+			</div>
+			<span id='num1'></span>
+		
+				
+			<div class="textbox">
+			<img src="icons/address-card.svg">
+			<input type="url" placeholder="Website Address" name="address" id="webadd" pattern="https?://.+" title="Include http://">
+			</div>
+			<span id='webadd1'></span>
+			
+			<h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
+				
+			<input class="btn" type="submit" name="signin" value="Sign-In" id="submit">
+			
+			<input class="btn" type="reset" name="Reset" value="Reset" >
+			
+			<div class="reg">
+			<p>Already Register =><a href="login.html">Login Here</a></p>
+			</div>
+		</form>
+	</div>
+	<footer>
+				<div class="foot-container">
+			<div class="copyright">
+				<p>&copy; Richa Patel-8334401 </p>
+			<p id="demo"><button type="button" class="btn" onclick="loadDoc()">About US</button></p>
+				</div>
+		</div>
+				
+	</footer>			
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "About.txt", true);
+  xhttp.send();
+}
+</script>
+		
+	
+</body>
+</html>
