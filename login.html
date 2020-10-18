@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" initial-scale="1">
+	
+	<meta charset="utf-8">
+	
+	<title>World Shop</title>
+	
+	<link rel="stylesheet" href="style.css" type="text/css">
+	
+	<script src="Javascript/Registration-login.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="login">
+			<h1>Login</h1>
+		
+		<form action="login.php" method="POST"  onsubmit="return validation()" autocomplete="off">		
+				
+			<div class="textbox">
+			<img src="icons/user.svg">
+			<input type="text" placeholder="Username*" name="username" id="usr" title="It consist of Charater only" required >
+			</div>
+			
+
+				
+			<div class="textbox">
+			<img src="icons/key.svg"  id="pass2">
+			<input type="password" placeholder="Password*" name="password" id="pass" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters">
+			</div>
+						
+			<input class="btn" type="submit" name="Login" value="Login">	
+			
+			<div class="reg">
+			<p>Not Register yet =><a href="Registration.html">Register Here</a></p>
+			</div>
+		</form>
+		
+	</div>
+	<footer>
+				<div class="foot-container">
+			<div class="copyright">
+				<p>&copy; Richa Patel-8334401 </p>
+				<p id="demo">
+			<button type="button" class="btn" onclick="loadDoc()">About US</button>
+				</p>
+				</div>
+		</div>
+				
+	</footer>			
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "About.txt", true);
+  xhttp.send();
+}
+</script>
+		
+
+	
+</body>
+</html>
