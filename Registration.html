@@ -19,8 +19,15 @@
 			<h1>Registration</h1>
 		
 		<form action="registration.php" method="post"  onsubmit="return validation()" autocomplete="off">
+	
 			
-				
+			<div class="textbox">
+			<img src="icons/user.svg">
+			<input type="text" placeholder="Full Name" name="name" id="name" title="Please enter full Name" required >
+			</div>
+			<span id="name1"> </span>	
+	
+			
 			<div class="textbox">
 			<img src="icons/user.svg">
 			<input type="text" placeholder="Username*" name="username" id="usr" title="It consist of Charater only" required >
@@ -53,20 +60,14 @@
 			<img src="icons/phone.svg">
 				<div class="country-code" >	
 		
-				<span1><input type="tel" name="country code" maxlength="4" placeholder="+1" pattern="[+]\d{1,}" title="Format must be +1 or +91"></span1>	
+				<span1><input type="tel" name="countrycode" maxlength="4" placeholder="+1" pattern="[+]\d{1,}" title="Format must be +1 or +91"></span1>	
 			
-				<span2><input type="tel" placeholder="Mobile No" name="number" maxlength="12" id="num" pattern="\d{3} \d{3} \d{4}" title="Number must be in DIGIT and Format: 123 123 1234"></span2>
+				<span2><input type="tel" placeholder="Mobile No" name="number" maxlength="10" id="num" pattern="\d{10}" title="Number must be in DIGIT and Format: 0123456789"></span2>
 			
 				</div>
 			</div>
 			<span id='num1'></span>
 		
-				
-			<div class="textbox">
-			<img src="icons/address-card.svg">
-			<input type="url" placeholder="Website Address" name="address" id="webadd" pattern="https?://.+" title="Include http://">
-			</div>
-			<span id='webadd1'></span>
 			
 			<h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
 				
@@ -88,19 +89,19 @@
 		</div>
 				
 	</footer>			
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "About.txt", true);
-  xhttp.send();
-}
-</script>
+	<script>
+	function loadDoc() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	      document.getElementById("demo").innerHTML =
+	      this.responseText;
+	    }
+	  };
+	  xhttp.open("GET", "About.txt", true);
+	  xhttp.send();
+	}
+	</script>
 		
 	
 </body>
