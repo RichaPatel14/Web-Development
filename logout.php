@@ -4,6 +4,6 @@
 	session_unset();
 
    if(session_destroy()) {
-      header("Location:login.html");
+      header("Location:Verify.html");
    }
 ?>
