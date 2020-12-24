@@ -123,9 +123,7 @@ if($conn){
 			</div>
 			<span id='num1'></span>
 		
-			
-			<h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
-				
+		
 			<input class="btn" type="submit" name="signin" value="Sign-In" id="submit">
 			
 			<input class="btn" type="reset" name="Reset" value="Reset" >
